@@ -11,7 +11,7 @@ class Jumper < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/jklaiber/jumper/releases/download/v0.1.0/jumper_0.1.0_darwin_arm64.tar.gz"
-      sha256 "1c0eb70a3f5556c759a06af498a62ec529aae83468b07f67fdbe81d23b4a6746"
+      sha256 "113981157f90c224a0bee408826bd8dd066115b186c81a006caa1b674661ce81"
 
       def install
         bin.install "jumper"
@@ -22,7 +22,7 @@ class Jumper < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/jklaiber/jumper/releases/download/v0.1.0/jumper_0.1.0_darwin_amd64.tar.gz"
-      sha256 "737edef4cfe696680dce03c2768f3aff741028d2de18ef232c71179c61ba4367"
+      sha256 "bfb8105d27bd978e68b1317a6300c510cdc54d667933de96b5e6345521bd9253"
 
       def install
         bin.install "jumper"
@@ -36,7 +36,7 @@ class Jumper < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/jklaiber/jumper/releases/download/v0.1.0/jumper_0.1.0_linux_arm64.tar.gz"
-      sha256 "fbe94fd5a7970a2ab1daf074f068b770f671218f4f14d56b720f6cd0af6c9291"
+      sha256 "1675412e6008daed28911a10497c9855746d417edce3fafd4733f74b2bcba2ce"
 
       def install
         bin.install "jumper"
@@ -47,7 +47,7 @@ class Jumper < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/jklaiber/jumper/releases/download/v0.1.0/jumper_0.1.0_linux_amd64.tar.gz"
-      sha256 "2d744438ad75b4646bc609d1a367a5223797c65b0fc70f423c08190f67715d34"
+      sha256 "43082c7491168564c200582c0976c9d1a3f47220a258d5823d4b81e6c1b58d10"
 
       def install
         bin.install "jumper"
