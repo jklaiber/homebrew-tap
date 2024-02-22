@@ -5,13 +5,13 @@
 class Jumper < Formula
   desc "Jumper is a simple CLI SSH manager"
   homepage "https://github.com/jklaiber/jumper"
-  version "0.1.1"
+  version "0.1.2"
   license "GPL-3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jklaiber/jumper/releases/download/v0.1.1/jumper_0.1.1_darwin_arm64.tar.gz"
-      sha256 "2df3e2f5eba1af8d90024544b1a407808013d9866b8f6c1cc7f26b89a78c7910"
+      url "https://github.com/jklaiber/jumper/releases/download/v0.1.2/jumper_0.1.2_darwin_arm64.tar.gz"
+      sha256 "93707f4b7ef9f90c29cd838a3b40d73fc51969f86556b2d934e3eda096e7ee81"
 
       def install
         bin.install "jumper"
@@ -21,8 +21,8 @@ class Jumper < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jklaiber/jumper/releases/download/v0.1.1/jumper_0.1.1_darwin_amd64.tar.gz"
-      sha256 "98c9d231a18fd6d7b62a8d7717aa1c858c30d63ebd5f2c7a270693a3832c5c3c"
+      url "https://github.com/jklaiber/jumper/releases/download/v0.1.2/jumper_0.1.2_darwin_amd64.tar.gz"
+      sha256 "1c06cba56fb5bec39864a3f537770f6dea8152175b1029e23715991bac396a9c"
 
       def install
         bin.install "jumper"
@@ -35,8 +35,8 @@ class Jumper < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jklaiber/jumper/releases/download/v0.1.1/jumper_0.1.1_linux_arm64.tar.gz"
-      sha256 "c1c6e9a2155d2fd0b4fda5a3711d2bf4e645f1133f9e0d21c066133bc52054b1"
+      url "https://github.com/jklaiber/jumper/releases/download/v0.1.2/jumper_0.1.2_linux_arm64.tar.gz"
+      sha256 "f0ed6fb49709ad0d863c8660c77d764c9591154ed94753686cf267dfd584e2a1"
 
       def install
         bin.install "jumper"
@@ -46,8 +46,8 @@ class Jumper < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jklaiber/jumper/releases/download/v0.1.1/jumper_0.1.1_linux_amd64.tar.gz"
-      sha256 "503345397bb983ae08fea4a72bbb12b05aa7b3ca5ddb76b93c1ef101f7bcac08"
+      url "https://github.com/jklaiber/jumper/releases/download/v0.1.2/jumper_0.1.2_linux_amd64.tar.gz"
+      sha256 "91e38190c8cf8bc5d5684796603d2e46e09156a79ed5b5089a9230dda944a65c"
 
       def install
         bin.install "jumper"
