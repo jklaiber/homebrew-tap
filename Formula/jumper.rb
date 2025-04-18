@@ -5,13 +5,13 @@
 class Jumper < Formula
   desc "Jumper is a simple CLI SSH manager"
   homepage "https://github.com/jklaiber/jumper"
-  version "0.1.2"
+  version "0.1.3"
   license "GPL-3"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/jklaiber/jumper/releases/download/v0.1.2/jumper_0.1.2_darwin_arm64.tar.gz"
-      sha256 "93707f4b7ef9f90c29cd838a3b40d73fc51969f86556b2d934e3eda096e7ee81"
+    if Hardware::CPU.intel?
+      url "https://github.com/jklaiber/jumper/releases/download/v0.1.3/jumper_0.1.3_darwin_amd64.tar.gz"
+      sha256 "d2adcc8f1f5552f93dd891fb588f0f46e9ab75edd561befcd68ef4f0748a2802"
 
       def install
         bin.install "jumper"
@@ -20,9 +20,9 @@ class Jumper < Formula
         fish_completion.install "completions/jumper.fish"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/jklaiber/jumper/releases/download/v0.1.2/jumper_0.1.2_darwin_amd64.tar.gz"
-      sha256 "1c06cba56fb5bec39864a3f537770f6dea8152175b1029e23715991bac396a9c"
+    if Hardware::CPU.arm?
+      url "https://github.com/jklaiber/jumper/releases/download/v0.1.3/jumper_0.1.3_darwin_arm64.tar.gz"
+      sha256 "d200fd6fbb8daff71c3b421cc715be4d5d54e7d4381ee61f681a3e858ba98c86"
 
       def install
         bin.install "jumper"
@@ -34,26 +34,30 @@ class Jumper < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jklaiber/jumper/releases/download/v0.1.2/jumper_0.1.2_linux_arm64.tar.gz"
-      sha256 "f0ed6fb49709ad0d863c8660c77d764c9591154ed94753686cf267dfd584e2a1"
+    if Hardware::CPU.intel?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/jklaiber/jumper/releases/download/v0.1.3/jumper_0.1.3_linux_amd64.tar.gz"
+        sha256 "19648fae60e454529838b281f8c17edfb57bfe542c31f55c2d454d88599b307b"
 
-      def install
-        bin.install "jumper"
-        bash_completion.install "completions/jumper.bash" => "jumper"
-        zsh_completion.install "completions/jumper.zsh" => "_jumper"
-        fish_completion.install "completions/jumper.fish"
+        def install
+          bin.install "jumper"
+          bash_completion.install "completions/jumper.bash" => "jumper"
+          zsh_completion.install "completions/jumper.zsh" => "_jumper"
+          fish_completion.install "completions/jumper.fish"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/jklaiber/jumper/releases/download/v0.1.2/jumper_0.1.2_linux_amd64.tar.gz"
-      sha256 "91e38190c8cf8bc5d5684796603d2e46e09156a79ed5b5089a9230dda944a65c"
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/jklaiber/jumper/releases/download/v0.1.3/jumper_0.1.3_linux_arm64.tar.gz"
+        sha256 "5e054ca983aec70961db8b64cfb72b0a0ac3814e67b0208e801be4e3ebab76a9"
 
-      def install
-        bin.install "jumper"
-        bash_completion.install "completions/jumper.bash" => "jumper"
-        zsh_completion.install "completions/jumper.zsh" => "_jumper"
-        fish_completion.install "completions/jumper.fish"
+        def install
+          bin.install "jumper"
+          bash_completion.install "completions/jumper.bash" => "jumper"
+          zsh_completion.install "completions/jumper.zsh" => "_jumper"
+          fish_completion.install "completions/jumper.fish"
+        end
       end
     end
   end
