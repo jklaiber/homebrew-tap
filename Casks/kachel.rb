@@ -8,15 +8,17 @@ cask "kachel" do
   desc "Tiling window manager with xmonad's workspace model"
   homepage "https://github.com/jklaiber/kachel"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Kachel.app"
 
   # Kachel isn't notarized (no paid Apple Developer ID); without this macOS
   # refuses to open the downloaded app.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Kachel.app"]
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:           ["-dr", "com.apple.quarantine", "{{appdir}}/Kachel.app"],
+        must_succeed:   false,
+        writable_paths: ["{{appdir}}/Kachel.app"]
   end
 
   uninstall quit: "io.github.jklaiber.kachel"
