@@ -1,14 +1,14 @@
 # This file is written by scripts/update-cask.sh in jklaiber/kachel. Don't edit.
 cask "kachel" do
-  version "0.1.20"
-  sha256 "067f030f8e309e39a48e59ad94e0d688bf88a1e41f6a28c655905e76ea3a9b14"
+  version "0.1.21"
+  sha256 "14a3bff82c44baf7196f72b220c851db8aed4d3a85a4301a550676415f24cd45"
 
   url "https://github.com/jklaiber/kachel/releases/download/v#{version}/Kachel-#{version}.zip"
   name "Kachel"
   desc "Tiling window manager with xmonad's workspace model"
   homepage "https://github.com/jklaiber/kachel"
 
-  depends_on macos: :ventura
+  depends_on macos: :tahoe
 
   app "Kachel.app"
   # The  command: the app's own executable, which acts as the
