@@ -1,7 +1,7 @@
 # This file is written by scripts/update-cask.sh in jklaiber/kachel. Don't edit.
 cask "kachel" do
-  version "0.1.25"
-  sha256 "103ce8cdc3c9aaea59d5635780674391cd452a72befa2d5b17e36e922f5faf10"
+  version "0.1.26"
+  sha256 "35ea440097cce07d5fdd09eef3d190f96f9b7ed50faf716e8aab880b37b52fc8"
 
   url "https://github.com/jklaiber/kachel/releases/download/v#{version}/Kachel-#{version}.zip"
   name "Kachel"
